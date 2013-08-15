@@ -49,4 +49,12 @@ def set_platform_default_providers
         :provider => Chef::Provider::FirewallRuleUfw
     )
   end
+
+  [:redhat, :centos, :fedora, :scientific, :amazon].each do |platform|
+    Chef::Platform.set(
+        :platform => platform,
+        :resource => :firewall_rule,
+        :provider => Chef::Provider::FirewallRuleIptables
+    )
+  end
 end
