@@ -26,7 +26,7 @@ attribute :port, :kind_of => Integer
 attribute :ports, :kind_of => Array
 attribute :port_range, :kind_of => Range
 attribute :protocol, :kind_of => Symbol, :equal_to => [ :udp, :tcp ]
-attribute :direction, :kind_of => Symbol, :equal_to => [ :in, :out ]
+attribute :direction, :kind_of => Symbol, :equal_to => [ :in, :out ], :default => :in
 attribute :interface, :kind_of => String
 attribute :logging, :kind_of => Symbol, :equal_to => [ :connections, :packets ]
 attribute :source, :regex => IP_CIDR_VALID_REGEX
